@@ -4,7 +4,7 @@ class Dev:
 
 
 class Prod(Dev):
-    simcloud_event_bridge = ""
+    simcloud_event_bridge = "arn:aws-us-gov:events:us-gov-west-1:528446015890:event-bus/simcloud-event-bus-prod"
 
 
 Settings = Dev()
