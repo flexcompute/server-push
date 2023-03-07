@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "server-push"
+version = "0.1.0"
+description = ""
+authors = ["Kidy Lee <kidylee@gmail.com>"]
+readme = "README.md"
+packages = [{include = "server_push"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+boto3 = "^1.26.85"
+pydantic = "^1.10.5"
+arrow = "^1.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
