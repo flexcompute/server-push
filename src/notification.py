@@ -11,13 +11,15 @@ client = boto3.client("events")
 
 class MessageSender(BaseModel):
     user_id: str
+    task_id: str
 
     def send(self, csv_record):
         payload = {"source": "solver",
                    "type": "progress",
                    "userId": self.user_id,
                    "timestamp": arrow.utcnow().format(Settings.datetime_format),
-                   "data": csv_record }
+                   "data": {"taskId": self.task_id,
+                            "message": csv_record}}
         message = {"userId": self.user_id, "payload": payload}
         try:
             response = client.put_events(Entries=[
